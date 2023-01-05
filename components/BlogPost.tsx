@@ -24,7 +24,7 @@ export const BlogPost: React.VFC<Props> = ({ post }) => {
               {post.title}
             </h2>
             {isOuterLink && (
-              <ExternalLinkIcon className="mt-[0.5px] mr-2 sm:mr-0 ml-1 w-5 min-w-[20px] h-5 text-blue-700 dark:text-blue-200" />
+              <ExternalLinkIcon className="mt-[1.5px] mr-2 sm:mr-0 ml-2 w-5 min-w-[20px] h-5 text-night dark:text-day" />
             )}
           </div>
           <time className="flex-shrink-0 text-gray-600 dark:text-gray-400">
@@ -63,7 +63,13 @@ export const BlogPost: React.VFC<Props> = ({ post }) => {
   };
 
   return post?.outer_link ? (
-    <a href={post.outer_link} target="_blank" rel="noreferrer noopener" aria-label="outer-link">
+    <a
+      href={post.outer_link}
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="outer-link"
+      className={classNames('', { 'block mt-20': isProject })}
+    >
       {renderBlogPost({ isOuterLink: true })}
     </a>
   ) : (
