@@ -1,31 +1,33 @@
-import { Feed } from 'feed';
-import BLOG from '~/blog.config';
-import { Post } from '~/types';
+import Parser from 'rss-parser';
 
-export function generateRss(posts: Post[]) {
-  const year = new Date().getFullYear();
-  const feed = new Feed({
-    title: BLOG.title,
-    description: BLOG.description,
-    id: `${BLOG.link}/${BLOG.path}`,
-    link: `${BLOG.link}/${BLOG.path}`,
-    language: BLOG.lang,
-    favicon: `${BLOG.link}/favicon.ico`,
-    copyright: `All rights reserved ${year}, ${BLOG.author}`,
-    author: {
-      name: BLOG.author,
-      email: BLOG.email,
-      link: BLOG.link,
-    },
-  });
-  posts.forEach((post) => {
-    feed.addItem({
-      title: post?.title ?? '',
-      id: `${BLOG.link}/${post.slug}`,
-      link: `${BLOG.link}/${post.slug}`,
-      description: post.summary,
-      date: new Date(post?.date?.start_date || post.createdTime),
-    });
-  });
-  return feed.rss2();
+type Feed = {
+  slug: string;
+  title: string;
+  url: string;
+};
+
+export const FEEDS: Feed[] = [
+  // {
+  //   slug: 'vg',
+  //   title: 'VG',
+  //   url: 'https://www.vg.no/rss/feed',
+  // },
+  {
+    slug: 'zenn',
+    title: 'Zenn',
+    url: 'https://zenn.dev/kalubi/feed',
+  },
+  {
+    slug: 'note',
+    title: 'Note',
+    url: 'https://note.com/hayato_kamiyama/rss',
+  },
+];
+
+export async function getFeed(feedUrl: string) {
+  const parser = new Parser();
+
+  const feed = await parser.parseURL(feedUrl);
+
+  return feed;
 }

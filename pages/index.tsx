@@ -1,10 +1,12 @@
 import { createHash } from 'crypto';
 import { GetStaticProps, NextPage } from 'next';
+import Link from 'next/link';
 import BLOG from '~/blog.config';
 import { Container, Profile } from '~/components';
 import { SearchLayout } from '~/layouts';
 import { filterPublishedPosts, getAllPosts, getAllTags } from '~/lib/notion';
 import { getProfilePost } from '~/lib/notion/getProfilePost';
+import { FEEDS } from '~/lib/rss';
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPosts = await getAllPosts({ includedPages: true });
@@ -34,6 +36,13 @@ const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   return (
     <Container title={BLOG.title} description={BLOG.description} from="posts">
       {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
+      <div className="grid grid-cols-2 gap-4">
+        {FEEDS.map((feed) => (
+          <Link key={feed.slug} href={`/feeds/${feed.slug}`}>
+            <a className="p-4 rounded-lg border border-gray-200 hover:border-gray-500">{feed.title}</a>
+          </Link>
+        ))}
+      </div>
       <SearchLayout tags={tags} posts={posts} />
     </Container>
   );

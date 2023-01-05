@@ -6,8 +6,8 @@ const BLOG = {
   author: 'Hayato Kamiyama',
   twitterId: 'jookalubi24',
   email: 'kami8ma8810@gmail.com',
-  link: '',
-  description: 'アウトプットのインデックスサイト',
+  link: 'https://zenn.dev/kalubi/feed?all=1',
+  description: 'カミヤマハヤトのアウトプット用インデックスサイト',
   lang: 'ja-JP', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'light', // ['light', 'dark'],
   font: 'sans-serif', // ['sans-serif', 'serif']
