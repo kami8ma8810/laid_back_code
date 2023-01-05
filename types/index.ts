@@ -34,6 +34,7 @@ export type TagObj = { [key: string]: number };
 export type BlogConfig = {
   title: string;
   author: string;
+  twitterId: string;
   email: string;
   link: string;
   description: string;
