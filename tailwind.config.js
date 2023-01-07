@@ -30,6 +30,12 @@ const tailwindConfig = {
         serif: ['"Source Serif"', ...fontFamily.serif, ...fontSerifCJK],
         noEmoji: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        tabItems: 'repeat(auto-fit, minmax(150px, 1fr))', //minmax(最小幅,最大幅)
+      },
+      boxShadow: {
+        y: '0 8px 4px -4px rgba(0,0,0,0.1);',
+      },
     },
   },
   variants: {

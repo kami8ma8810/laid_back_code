@@ -1,15 +1,15 @@
 import { format } from 'date-fns';
-import { FEEDS, getFeed } from '../../lib/rss';
+import { FEED_DATA, getFeed } from '../../lib/rss';
 
 export async function getStaticPaths() {
   return {
-    paths: FEEDS.map((feed) => ({ params: { slug: feed.slug } })),
+    paths: FEED_DATA.map((feed) => ({ params: { slug: feed.slug } })),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }: any) {
-  const feed = FEEDS.find((feed) => feed.slug === params.slug);
+  const feed = FEED_DATA.find((feed) => feed.slug === params.slug);
 
   if (!feed) return;
 
@@ -24,7 +24,7 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
-export default function Feed({ feed, items }: any) {
+const Feed = function ({ feed, items }: any) {
   return (
     <div>
       <h1 className="mb-12 text-5xl font-bold text-center">{feed.title}</h1>
@@ -38,15 +38,17 @@ export default function Feed({ feed, items }: any) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {console.log(item)}
+              {/* {console.log(item)} */}
               {item.enclosure?.url && <img src={item.enclosure.url} alt={item.title} />}
-              <h3 className="font-bold">{item.title}</h3>
-              <p>{item.content}</p>
-              <div>{format(new Date(item.isoDate), 'PPP')}</div>
+              <h2 className="font-bold">{item.title}</h2>
+              {/* <p>{item.content}</p> */}
+              <div>{format(new Date(item.isoDate), 'yyyy/MM/dd')}</div>
             </a>
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Feed;

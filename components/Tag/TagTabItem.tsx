@@ -40,13 +40,14 @@ export const TagTabItem: React.VFC<Props> = ({ tagKey, selected, postType = 'pos
   const tagData = getTagDataBySlug(castKey);
   return (
     <li
-      className={classNames('mr-3 font-bold whitespace-nowrap rounded-lg min-w-max block', {
-        'text-gray-400 border-gray-100 dark:text-gray-300 dark:border-gray-700': !selected,
-        'bg-gray-200 text-gray-700 dark:text-night': selected,
+      className={classNames('font-bold whitespace-nowrap rounded-lg min-w-max block transition-all', {
+        'text-gray-400 border-gray-100 dark:text-gray-300 dark:border-gray-700 hover:border-gray-300 border-2 dark:hover:border-gray-300':
+          !selected,
+        'bg-gray-200 text-gray-700 dark:text-night pointer-events-none': selected,
       })}
     >
       <Link href={linkUrl} scroll={false}>
-        <a className="flex items-center py-2 px-4">
+        <a className="flex items-center p-2">
           {tagData?.emoji && <Twemoji emoji={tagData.emoji} size={20} />}
           <span
             className={classNames({

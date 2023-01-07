@@ -128,14 +128,16 @@ export const Container: React.VFC<Props> = ({ children, fullWidth, ...meta }) =>
         })}
       >
         <Header navBarTitle={siteTitle} fullWidth={fullWidth} />
-        <main
-          className={classNames('m-auto flex-grow w-full transition-all', {
-            'px-4 md:px-24': fullWidth,
-            'max-w-2xl px-4': !fullWidth,
-          })}
-        >
-          {children}
-        </main>
+        <div className={classNames()}>
+          <main
+            className={classNames('m-auto flex-grow w-full transition-all', {
+              'px-4 md:px-24': fullWidth,
+              'max-w-2xl px-4': !fullWidth,
+            })}
+          >
+            {children}
+          </main>
+        </div>
         <Footer fullWidth={fullWidth} />
       </div>
     </div>

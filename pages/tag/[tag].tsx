@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import BLOG from '~/blog.config';
 import { Profile, Container } from '~/components';
 import { SearchLayout } from '~/layouts';
+import Feeds from '~/layouts/feeds';
 import { getTagDataBySlug, TagSlug } from '~/lib';
 import { filterPublishedPosts, getAllPosts, getAllTags } from '~/lib/notion';
 import { getProfilePost } from '~/lib/notion/getProfilePost';
@@ -59,6 +60,7 @@ const TagPage: NextPage<Props> = ({ tags, posts, currentTag, post, blockMap, ema
       slug={typeof tag === 'string' ? tag : undefined}
     >
       {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
+      <Feeds />
       <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
     </Container>
   );

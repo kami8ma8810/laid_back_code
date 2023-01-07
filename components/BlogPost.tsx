@@ -68,7 +68,7 @@ export const BlogPost: React.VFC<Props> = ({ post }) => {
       target="_blank"
       rel="noreferrer noopener"
       aria-label="outer-link"
-      className={classNames('', { 'block mt-20': isProject })}
+      className={classNames('', { 'block mt-10': isProject })}
     >
       {renderBlogPost({ isOuterLink: true })}
     </a>

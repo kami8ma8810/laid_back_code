@@ -12,7 +12,6 @@ const links = [
   { id: 1, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
   { id: 2, name: locale.NAV.PROJECT, to: '/projects', show: true },
   { id: 3, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-  // { id: 4, name: locale.NAV.RSS, to: '/feed', show: true },
 ];
 
 const NavBar: React.VFC = () => {
@@ -23,6 +22,8 @@ const NavBar: React.VFC = () => {
     if (router.pathname === links[1].to || router.asPath.includes('projects')) return links[1].to;
     if (router.asPath === links[2].to) return links[2].to;
     return links[0].to;
+    // if (router.pathname === links[3].to || router.asPath.includes('feed')) return links[3].to;
+    // if (router.pathname === links[4].to || router.asPath.includes('feed')) return links[4].to;
   }, [router]);
 
   return (
@@ -34,11 +35,11 @@ const NavBar: React.VFC = () => {
               <li
                 key={link.id}
                 className={classNames('block text-black dark:text-gray-50 nav', {
-                  'border-b-2 border-yellow-light dark:border-yellow': link.to === activeNav,
+                  'border-b-2 border-yellow-light dark:border-yellow pointer-events-none': link.to === activeNav,
                 })}
               >
                 <Link href={link.to}>
-                  <a>{link.name}</a>
+                  <a className="hover:opacity-50 transition-all ">{link.name}</a>
                 </Link>
               </li>
             ),
@@ -98,7 +99,7 @@ export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
       <div className="h-4 md:h-12" ref={sentinalRef}></div>
       <div
         className={classNames(
-          'sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60',
+          'sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-day dark:bg-night  transition-all',
           {
             'px-4 md:px-24': fullWidth,
             'max-w-2xl px-4': !fullWidth,
@@ -109,7 +110,7 @@ export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
       >
         <div className="flex items-center">
           <Link href="/">
-            <a aria-label={BLOG.title} className="flex gap-x-4 items-center">
+            <a aria-label={BLOG.title} className="flex gap-x-4 items-center hover:opacity-50 transition-all ">
               <div className="min-w-max">
                 <Twemoji emoji={'🏠'} size={28} />
               </div>
