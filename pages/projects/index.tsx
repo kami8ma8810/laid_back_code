@@ -1,9 +1,10 @@
 import { createHash } from 'crypto';
+import { motion } from 'framer-motion';
 import { GetStaticProps, NextPage } from 'next';
 import BLOG from '~/blog.config';
 import { Container, Profile } from '~/components';
 import { SearchLayout } from '~/layouts';
-import Feeds from '~/layouts/feeds';
+// import Feeds from '~/layouts/feeds';
 import { fetchLocaleLang } from '~/lib/i18n/lang';
 import { filterPublishedProjects, getAllPosts, getAllProjects, getAllTags } from '~/lib/notion';
 import { getProfilePost } from '~/lib/notion/getProfilePost';
@@ -37,11 +38,21 @@ const locale = fetchLocaleLang();
 
 const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   return (
-    <Container title={locale.NAV.PROJECT} description={BLOG.description} from="projects">
-      {/* {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />} */}
-      <Feeds />
-      <SearchLayout tags={tags} posts={posts} postType="project" />
-    </Container>
+    <motion.div
+      initial={{ x: -10, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -10, opacity: 0 }}
+      transition={{
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
+      <Container title={locale.NAV.PROJECT} description={BLOG.description} from="projects">
+        {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
+        {/* <Feeds /> */}
+        <SearchLayout tags={tags} posts={posts} postType="project" />
+      </Container>
+    </motion.div>
   );
 };
 

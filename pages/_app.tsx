@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import 'katex/dist/katex.min.css';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
@@ -14,7 +15,7 @@ import '~/styles/notion.css';
 const Ackee = dynamic(() => import('~/components/Stats/Ackee'), { ssr: false });
 const Gtag = dynamic(() => import('~/components/Stats/Gtag'), { ssr: false });
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
       {/* <Scripts /> */}
@@ -33,7 +34,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             themes={['dark', 'light']}
             enableSystem={false}
           >
-            <Component {...pageProps} />
+            <div className="overflow-x-hidden">
+              <AnimatePresence mode="wait" initial={false}>
+                <Component {...pageProps} />
+              </AnimatePresence>
+            </div>
           </ThemeProvider>
         </>
       </LocaleProvider>

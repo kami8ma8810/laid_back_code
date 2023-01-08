@@ -1,4 +1,5 @@
 import { createHash } from 'crypto';
+import { motion } from 'framer-motion';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 import DefaultErrorPage from 'next/error';
 import { useRouter } from 'next/router';
@@ -54,14 +55,24 @@ const BlogPost: NextPage<Props> = ({ post, blockMap, emailHash }) => {
           },
         }}
       >
-        <Layout
-          blockMap={blockMap}
-          post={post}
-          emailHash={emailHash}
-          fullWidth={post?.fullWidth ?? false}
-          tweet={Tweet}
-          slug={typeof slug === 'string' ? slug : null}
-        />
+        <motion.div
+          initial={{ x: -10, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -10, opacity: 0 }}
+          transition={{
+            stiffness: 260,
+            damping: 20,
+          }}
+        >
+          <Layout
+            blockMap={blockMap}
+            post={post}
+            emailHash={emailHash}
+            fullWidth={post?.fullWidth ?? false}
+            tweet={Tweet}
+            slug={typeof slug === 'string' ? slug : null}
+          />
+        </motion.div>
       </TwitterContextProvider>
     </>
   );

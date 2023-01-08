@@ -1,9 +1,10 @@
 import { createHash } from 'crypto';
+import { motion } from 'framer-motion';
 import { GetStaticProps, NextPage } from 'next';
 import BLOG from '~/blog.config';
 import { Container, Profile } from '~/components';
 import { SearchLayout } from '~/layouts';
-import Feeds from '~/layouts/feeds';
+// import Feeds from '~/layouts/feeds';
 import { filterPublishedPosts, getAllPosts, getAllTags } from '~/lib/notion';
 import { getProfilePost } from '~/lib/notion/getProfilePost';
 
@@ -34,11 +35,21 @@ type Props = Omit<React.ComponentProps<typeof Profile>, 'fullWidth'> &
 const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   // console.log(posts, post);
   return (
-    <Container title={BLOG.title} description={BLOG.description} from="posts">
-      {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
-      <Feeds />
-      <SearchLayout tags={tags} posts={posts} />
-    </Container>
+    <motion.div
+      initial={{ x: 10, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 10, opacity: 0 }}
+      transition={{
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
+      <Container title={BLOG.title} description={BLOG.description} from="posts">
+        {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
+        {/* <Feeds /> */}
+        <SearchLayout tags={tags} posts={posts} />
+      </Container>
+    </motion.div>
   );
 };
 

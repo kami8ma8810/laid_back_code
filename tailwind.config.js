@@ -32,6 +32,7 @@ const tailwindConfig = {
       },
       gridTemplateColumns: {
         tabItems: 'repeat(auto-fit, minmax(150px, 1fr))', //minmax(最小幅,最大幅)
+        feedItems: 'repeat(auto-fit, minmax(320px, 1fr))', //minmax(最小幅,最大幅)
       },
       boxShadow: {
         y: '0 8px 4px -4px rgba(0,0,0,0.1);',
