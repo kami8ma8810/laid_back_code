@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             themes={['dark', 'light']}
             enableSystem={false}
           >
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
             </AnimatePresence>
           </ThemeProvider>
