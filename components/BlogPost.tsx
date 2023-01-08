@@ -17,17 +17,17 @@ export const BlogPost: React.VFC<Props> = ({ post }) => {
   const isProject = post?.type?.[0] === 'Project';
   const renderBlogPost = ({ isOuterLink }: RenderBlogPostArg) => {
     return (
-      <article key={post.id} className="mt-2 mb-6 md:mb-8 hover:opacity-80">
+      <article key={post.id} className="md:py-2 mb-8 md:mb-6 hover:opacity-50 transition-opacity mt">
         <header className="flex flex-col md:flex-row gap-x-4 justify-between md:items-baseline">
           <div className="flex">
-            <h2 className="mb-2 text-lg md:text-xl font-bold text-black dark:text-white cursor-pointer">
+            <h2 className="mb-0 md:mb-2 text-lg md:text-xl font-bold text-black dark:text-white cursor-pointer">
               {post.title}
             </h2>
             {isOuterLink && (
               <ExternalLinkIcon className="mt-[1.5px] mr-2 sm:mr-0 ml-2 w-5 min-w-[20px] h-5 text-night dark:text-day" />
             )}
           </div>
-          <time className="flex-shrink-0 text-gray-600 dark:text-gray-400">
+          <time className="flex-shrink-0 text-gray-400">
             {formatDate(post?.date?.start_date || post.createdTime, BLOG.lang)}
           </time>
         </header>
