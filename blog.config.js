@@ -11,8 +11,8 @@ const BLOG = {
   lang: 'ja-JP', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'light', // ['light', 'dark'],
   font: 'sans-serif', // ['sans-serif', 'serif']
-  // lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
-  // darkBackground: '#0C1C33', // use hex value, don't forget '#'
+  lightBackground: '#faf8f7', // use hex value, don't forget '#' e.g #fffefc
+  darkBackground: '#292626', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Nobelium in a folder
   profileSlug: 'profile',
   since: 2023, // If leave this empty, current year will be used.
@@ -47,20 +47,20 @@ const BLOG = {
     provider: '', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
       repo: 'for-gitalk', // The repository of store comments
-      owner: 'yokinist',
-      clientID: 'f06077c5603d6099ec37',
+      owner: '',
+      clientID: '',
       clientSecret: process.env.GITALK_CLIENT_SECRET,
-      admin: ['yokinist'],
-      id: 'yokinist.me', // Ensure uniqueness and length less than 50
+      admin: [''],
+      id: '', // Ensure uniqueness and length less than 50
       distractionFreeMode: false,
     },
     utterancesConfig: {
       repo: '',
     },
     cusdisConfig: {
-      appId: '4c9aa1e3-623a-4773-a9ef-f345f484efe5', // data-app-id'
-      host: 'https://cusdis.com', // data-host, change this if you're using self-hosted version
-      scriptSrc: 'https://cusdis.com/js/cusdis.es.js', // change this if you're using self-hosted version
+      appId: '', // data-app-id'
+      host: '', // data-host, change this if you're using self-hosted version
+      scriptSrc: '', // change this if you're using self-hosted version
     },
   },
   isProd: process.env.VERCEL_ENV === 'production', // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)

@@ -28,7 +28,7 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"components/Blender.js"
+		"pages/api/og.jsx",
 	],
 	"exclude": [
 		"node_modules"
