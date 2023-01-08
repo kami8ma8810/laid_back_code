@@ -47,7 +47,8 @@ export const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag, postTy
         />
         <SearchIcon className="absolute top-3 right-3 w-5 h-5 text-gray-500 dark:text-gray-400" />
       </div>
-      <div className="sm:sticky top-16 z-10 bg-day dark:bg-night sticky-tabs">
+      {/* <div className="sm:sticky top-16 z-10 bg-day dark:bg-night sticky-tabs"> */}
+      <div className="bg-day dark:bg-night sticky-tabs">
         <Tags tags={tags} currentTag={currentTag} postType={postType} />
       </div>
       <div className="px-2 my-5 article-container">

@@ -38,7 +38,7 @@ const locale = fetchLocaleLang();
 const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   return (
     <Container title={locale.NAV.PROJECT} description={BLOG.description} from="projects">
-      {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
+      {/* {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />} */}
       <Feeds />
       <SearchLayout tags={tags} posts={posts} postType="project" />
     </Container>

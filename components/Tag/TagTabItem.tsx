@@ -43,7 +43,7 @@ export const TagTabItem: React.VFC<Props> = ({ tagKey, selected, postType = 'pos
       className={classNames('font-bold whitespace-nowrap rounded-lg min-w-max block transition-all', {
         'text-gray-400 border-gray-100 dark:text-gray-300 dark:border-gray-700 hover:border-gray-300 border-2 dark:hover:border-gray-300':
           !selected,
-        'bg-gray-200 text-gray-700 dark:text-night pointer-events-none': selected,
+        'bg-gray-200 text-gray-700 dark:text-night': selected,
       })}
     >
       <Link href={linkUrl} scroll={false}>

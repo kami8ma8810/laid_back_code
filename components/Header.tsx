@@ -35,7 +35,7 @@ const NavBar: React.VFC = () => {
               <li
                 key={link.id}
                 className={classNames('block text-black dark:text-gray-50 nav', {
-                  'border-b-2 border-yellow-light dark:border-yellow pointer-events-none': link.to === activeNav,
+                  'border-b-2 border-yellow-light dark:border-yellow': link.to === activeNav,
                 })}
               >
                 <Link href={link.to}>
@@ -99,7 +99,7 @@ export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
       <div className="h-4 md:h-12" ref={sentinalRef}></div>
       <div
         className={classNames(
-          'sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-day dark:bg-night  transition-all',
+          'sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-day dark:bg-night transition-all',
           {
             'px-4 md:px-24': fullWidth,
             'max-w-2xl px-4': !fullWidth,
