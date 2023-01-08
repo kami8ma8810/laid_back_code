@@ -34,11 +34,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             themes={['dark', 'light']}
             enableSystem={false}
           >
-            <div className="overflow-x-hidden">
-              <AnimatePresence mode="wait" initial={false}>
-                <Component {...pageProps} />
-              </AnimatePresence>
-            </div>
+            <AnimatePresence mode="wait" initial={false}>
+              <Component {...pageProps} />
+            </AnimatePresence>
           </ThemeProvider>
         </>
       </LocaleProvider>

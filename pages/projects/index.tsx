@@ -39,12 +39,13 @@ const locale = fetchLocaleLang();
 const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   return (
     <motion.div
-      initial={{ x: -10, opacity: 0 }}
+      initial={{ opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -10, opacity: 0 }}
+      exit={{ opacity: 0 }}
       transition={{
-        stiffness: 260,
-        damping: 20,
+        duration: 0.5,
+        type: 'tween',
+        ease: 'easeOut',
       }}
     >
       <Container title={locale.NAV.PROJECT} description={BLOG.description} from="projects">

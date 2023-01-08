@@ -2,6 +2,7 @@ import { ValueOf } from 'lib/types';
 
 const TAG_SLUGS = {
   All: 'all',
+  JavaScript: 'javascript',
   TypeScript: 'typescript',
   // React: 'react',
   NextJs: 'nextjs',
@@ -34,6 +35,11 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     emoji: '🌎',
     slug: TAG_SLUGS.All,
   },
+  [TAG_SLUGS.JavaScript]: {
+    name: 'JavaScript',
+    emoji: '🟨',
+    slug: TAG_SLUGS.JavaScript,
+  },
   [TAG_SLUGS.TypeScript]: {
     name: 'TypeScript',
     emoji: '🔒',
@@ -46,7 +52,7 @@ const TAG_DATA: Record<TagSlug, TagData> = {
   // },
   [TAG_SLUGS.NextJs]: {
     name: 'Next.js',
-    emoji: '🔷',
+    emoji: '🔳',
     slug: TAG_SLUGS.NextJs,
   },
   [TAG_SLUGS.Storybook]: {
