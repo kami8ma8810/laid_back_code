@@ -6,7 +6,7 @@ const BLOG = {
   author: 'Hayato Kamiyama',
   twitterId: 'jookalubi24',
   email: 'kami8ma8810@gmail.com',
-  link: 'https://laid-back-code.vercel.app/',
+  link: 'https://laid-back-code.vercel.app',
   description: 'カミヤマハヤトのアウトプット用インデックスサイト',
   lang: 'ja-JP', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'light', // ['light', 'dark'],
