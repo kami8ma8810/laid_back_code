@@ -26,7 +26,6 @@ export async function getStaticProps({ params }: any) {
 }
 
 const Feed: NextPage = ({ feed, items }: any) => {
-  // console.log(items);
   return (
     <>
       <h1 className="mb-12 text-5xl font-bold text-center">{feed.title}</h1>
@@ -41,7 +40,6 @@ const Feed: NextPage = ({ feed, items }: any) => {
             rel="noopener noreferrer"
           >
             {/* {item.contentSnippet} */}
-            {/* {console.log(item)} */}
             {item.enclosure?.url ? (
               <img src={item.enclosure.url} alt={item.title} />
             ) : (

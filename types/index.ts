@@ -44,7 +44,8 @@ export type BlogConfig = {
   lightBackground: `#${string}`;
   darkBackground: `#${string}`;
   path: string;
-  profileSlug: string;
+  bioBlogSlug: string;
+  bioProjectsSlug: string;
   since: number;
   postsPerPage: number;
   sortByDate: boolean;

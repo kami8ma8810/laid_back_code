@@ -33,7 +33,6 @@ type Props = Omit<React.ComponentProps<typeof Profile>, 'fullWidth'> &
   Omit<React.ComponentProps<typeof SearchLayout>, 'currentTag'>;
 
 const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
-  // console.log(posts, post);
   return (
     <motion.div
       initial={{ opacity: 0 }}

@@ -6,14 +6,13 @@ import { Container, Profile } from '~/components';
 import { SearchLayout } from '~/layouts';
 // import Feeds from '~/layouts/feeds';
 import { fetchLocaleLang } from '~/lib/i18n/lang';
-import { filterPublishedProjects, getAllPosts, getAllProjects, getAllTags } from '~/lib/notion';
-import { getProfilePost } from '~/lib/notion/getProfilePost';
+import { filterPublishedProjects, getAllPosts, getAllProjects, getAllTags, getBioProjectsPost } from '~/lib/notion';
 
 export const getStaticProps: GetStaticProps = async () => {
   const allProjects = await getAllProjects({ includedPages: true });
   const allPosts = await getAllPosts({ includedPages: true });
   // const totalPosts = allPosts.length;
-  const profilePostData = await getProfilePost(allPosts);
+  const profilePostData = await getBioProjectsPost(allPosts);
   const emailHash = createHash('md5').update(BLOG.email).digest('hex');
   const posts = filterPublishedProjects({
     posts: allProjects,
