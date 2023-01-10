@@ -52,7 +52,7 @@ export const Layout: React.VFC<Props> = ({
           {post.tags && (
             <div className="flex overflow-x-auto flex-nowrap gap-2 max-w-full article-tags">
               {post.tags.map((tag) => (
-                <TagItem key={tag} tag={tag} />
+                <TagItem key={tag} tag={tag} tagLink />
               ))}
             </div>
           )}
