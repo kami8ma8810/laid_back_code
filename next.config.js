@@ -7,7 +7,7 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   images: {
-    domains: ['gravatar.com', 'pbs.twimg.com', 'twemoji.maxcdn.com'],
+    domains: ['gravatar.com', 'pbs.twimg.com', 'twemoji.maxcdn.com', 'cdn.jsdelivr.net'],
   },
   eslint: {
     dirs: ['components', 'layouts', 'lib', 'pages'],

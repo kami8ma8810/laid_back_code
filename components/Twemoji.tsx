@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-const TWEMOJI_CDN_BASE_URL = 'https://twemoji.maxcdn.com/v/latest/svg';
+// const TWEMOJI_CDN_BASE_URL = 'https://twemoji.maxcdn.com/v/latest/svg';
+const TWEMOJI_CDN_BASE_URL = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg';
 
 type Props = {
   emoji: string;
