@@ -2,6 +2,8 @@ import { ValueOf } from 'lib/types';
 
 const TAG_SLUGS = {
   All: 'all',
+  Html: 'html',
+  Css: 'css',
   JavaScript: 'javascript',
   TypeScript: 'typescript',
   // React: 'react',
@@ -9,6 +11,7 @@ const TAG_SLUGS = {
   Storybook: 'storybook',
   Jest: 'jest',
   Blender: 'blender',
+  WordPress: 'wordpress',
   // Ikigomi: 'ikigomi',
   // Sento: 'sento',
   // Link: 'link',
@@ -35,9 +38,19 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     emoji: '🌎',
     slug: TAG_SLUGS.All,
   },
+  [TAG_SLUGS.Html]: {
+    name: 'HTML',
+    emoji: '📝',
+    slug: TAG_SLUGS.Html,
+  },
+  [TAG_SLUGS.Css]: {
+    name: 'CSS',
+    emoji: '👙',
+    slug: TAG_SLUGS.Css,
+  },
   [TAG_SLUGS.JavaScript]: {
     name: 'JavaScript',
-    emoji: '🟨',
+    emoji: '➗',
     slug: TAG_SLUGS.JavaScript,
   },
   [TAG_SLUGS.TypeScript]: {
@@ -69,6 +82,11 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     name: 'Blender',
     emoji: '🎲',
     slug: TAG_SLUGS.Blender,
+  },
+  [TAG_SLUGS.WordPress]: {
+    name: 'WordPress',
+    emoji: '🌀',
+    slug: TAG_SLUGS.WordPress,
   },
   // [TAG_SLUGS.Sento]: {
   //   name: '銭湯',
