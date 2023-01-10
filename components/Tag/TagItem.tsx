@@ -5,7 +5,7 @@ import { getTagDataBySlug, TagSlug } from '~/lib/tags';
 
 type Props = {
   tag: string;
-  tagLink: boolean;
+  tagLink?: boolean;
 };
 
 export const TagItem: React.VFC<Props> = ({ tag, tagLink = true }) => {
