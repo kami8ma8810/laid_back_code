@@ -12,6 +12,7 @@ const TAG_SLUGS = {
   Jest: 'jest',
   Blender: 'blender',
   WordPress: 'wordpress',
+  Astro: 'astro',
   // Ikigomi: 'ikigomi',
   // Sento: 'sento',
   // Link: 'link',
@@ -87,6 +88,11 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     name: 'WordPress',
     emoji: '🌀',
     slug: TAG_SLUGS.WordPress,
+  },
+  [TAG_SLUGS.Astro]: {
+    name: 'Astro',
+    emoji: '🚀',
+    slug: TAG_SLUGS.Astro,
   },
   // [TAG_SLUGS.Sento]: {
   //   name: '銭湯',
