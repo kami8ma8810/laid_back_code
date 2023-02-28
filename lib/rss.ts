@@ -28,13 +28,13 @@ export const FEED_DATA: FeedData[] = [
     url: 'https://note.com/hayato_kamiyama/rss',
   },
   // こういうニュースだけ見ていたい
-  {
-    id: 3,
-    slug: 'mitetai',
-    title: 'こういうニュースだけ見ていたい',
-    iconSrc: '/logo_note.png',
-    url: 'https://nitter.net/news_mitetai/rss',
-  },
+  // {
+  //   id: 3,
+  //   slug: 'mitetai',
+  //   title: 'こういうニュースだけ見ていたい',
+  //   iconSrc: '/logo_note.png',
+  //   url: 'https://nitter.net/news_mitetai/rss',
+  // },
 ];
 
 // 取得先のRSSのURLを引数にしてエクスポートする
