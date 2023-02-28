@@ -4,7 +4,7 @@ import { GetStaticProps, NextPage } from 'next';
 import BLOG from '~/blog.config';
 import { Container, Profile } from '~/components';
 import { SearchLayout } from '~/layouts';
-// import Feeds from '~/layouts/feeds';
+import Feeds from '~/layouts/feeds';
 import { filterPublishedPosts, getAllPosts, getAllTags } from '~/lib/notion';
 import { getProfilePost } from '~/lib/notion/getProfilePost';
 
@@ -46,7 +46,7 @@ const Blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
     >
       <Container title={BLOG.title} description={BLOG.description} from="posts">
         {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
-        {/* <Feeds /> */}
+        <Feeds />
         <SearchLayout tags={tags} posts={posts} />
       </Container>
     </motion.div>

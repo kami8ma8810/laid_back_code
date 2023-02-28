@@ -7,6 +7,7 @@ const TAG_SLUGS = {
   JavaScript: 'javascript',
   TypeScript: 'typescript',
   // React: 'react',
+  Vue: 'vue',
   NextJs: 'nextjs',
   Storybook: 'storybook',
   Jest: 'jest',
@@ -64,6 +65,11 @@ const TAG_DATA: Record<TagSlug, TagData> = {
   //   emoji: '💻',
   //   slug: TAG_SLUGS.React,
   // },
+  [TAG_SLUGS.Vue]: {
+    name: 'Vue',
+    emoji: '♻',
+    slug: TAG_SLUGS.Vue,
+  },
   [TAG_SLUGS.NextJs]: {
     name: 'Next.js',
     emoji: '🔳',
