@@ -1,6 +1,22 @@
 # Laid Back code
 This is built with Next.js and Notion Blog Site
 
+## Version
+Node 18.16.1
+## Setup
+1. yarn install
+2. bk.env.html をもとに `.env.local`を作成。(notionAccessToken は無くて OK)
+3. yarn dev で起動
+
+# Git について
+commitlint を入れているため、コミットする際は以下のコマンドでコミット・プッシュする。
+
+`git cz`
+
+新しいマシンの場合は別途グローバルインストールが必要。
+
+[こちら](https://zenn.dev/kalubi/articles/27fa889c338cdf)を参照
+
 A static blog build on top of Notion and Nextjs, deployed on [Vercel](https://vercel.com?utm_source=yokinist&utm_campaign=oss).
 
 This repo is customized based on [craigary/nobelium](https://github.com/craigary/nobelium).

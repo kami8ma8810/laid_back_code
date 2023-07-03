@@ -6,7 +6,7 @@ const TAG_SLUGS = {
   Css: 'css',
   JavaScript: 'javascript',
   TypeScript: 'typescript',
-  // React: 'react',
+  React: 'react',
   Vue: 'vue',
   NextJs: 'nextjs',
   Storybook: 'storybook',
@@ -14,16 +14,8 @@ const TAG_SLUGS = {
   Blender: 'blender',
   WordPress: 'wordpress',
   Astro: 'astro',
-  // Ikigomi: 'ikigomi',
-  // Sento: 'sento',
-  // Link: 'link',
-  // ProductDev: 'product-dev',
-  // Sauna: 'sauna',
-  // Items: 'items',
-  // Notion: 'notion',
-  // Solana: 'solana',
-  // Polygon: 'polygon',
-  // Solidity: 'solidity',
+  AI: 'ai',
+  Git: 'git',
 } as const;
 
 export type TagSlug = ValueOf<typeof TAG_SLUGS>;
@@ -60,14 +52,14 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     emoji: '🔒',
     slug: TAG_SLUGS.TypeScript,
   },
-  // [TAG_SLUGS.React]: {
-  //   name: 'React',
-  //   emoji: '💻',
-  //   slug: TAG_SLUGS.React,
-  // },
+  [TAG_SLUGS.React]: {
+    name: 'React',
+    emoji: '🟦',
+    slug: TAG_SLUGS.React,
+  },
   [TAG_SLUGS.Vue]: {
     name: 'Vue',
-    emoji: '♻',
+    emoji: '🟩',
     slug: TAG_SLUGS.Vue,
   },
   [TAG_SLUGS.NextJs]: {
@@ -100,51 +92,16 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     emoji: '🚀',
     slug: TAG_SLUGS.Astro,
   },
-  // [TAG_SLUGS.Sento]: {
-  //   name: '銭湯',
-  //   emoji: '♨️',
-  //   slug: TAG_SLUGS.Sento,
-  // },
-  // [TAG_SLUGS.Sauna]: {
-  //   name: 'サウナ',
-  //   emoji: '🧖‍♂️',
-  //   slug: TAG_SLUGS.Sauna,
-  // },
-  // [TAG_SLUGS.Link]: {
-  //   name: '外部リンク',
-  //   emoji: '🔗',
-  //   slug: TAG_SLUGS.Link,
-  // },
-  // [TAG_SLUGS.ProductDev]: {
-  //   name: 'プロダクト開発',
-  //   emoji: '🛠',
-  //   slug: TAG_SLUGS.ProductDev,
-  // },
-  // [TAG_SLUGS.Items]: {
-  //   name: 'アイテム',
-  //   emoji: '✨',
-  //   slug: TAG_SLUGS.Items,
-  // },
-  // [TAG_SLUGS.Notion]: {
-  //   name: 'Notion',
-  //   emoji: '📓',
-  //   slug: TAG_SLUGS.Notion,
-  // },
-  // [TAG_SLUGS.Solidity]: {
-  //   name: 'Solidity',
-  //   emoji: '💠',
-  //   slug: TAG_SLUGS.Solidity,
-  // },
-  // [TAG_SLUGS.Polygon]: {
-  //   name: 'Polygon',
-  //   emoji: '♋️',
-  //   slug: TAG_SLUGS.Polygon,
-  // },
-  // [TAG_SLUGS.Solana]: {
-  //   name: 'Solana',
-  //   emoji: '👾',
-  //   slug: TAG_SLUGS.Solana,
-  // },
+  [TAG_SLUGS.AI]: {
+    name: 'AI',
+    emoji: '🧠',
+    slug: TAG_SLUGS.AI,
+  },
+  [TAG_SLUGS.Git]: {
+    name: 'Git',
+    emoji: '🟧',
+    slug: TAG_SLUGS.Git,
+  },
 } as const;
 
 export const getTagDataBySlug = (slug: TagSlug): TagData => TAG_DATA[slug];
