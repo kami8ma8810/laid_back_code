@@ -1,34 +1,31 @@
 import 'gitalk/dist/gitalk.css';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import type { ReactCusdis as ReactCusdisType } from 'react-cusdis';
-import BLOG from '~/blog.config';
-import { fetchCusdisLang } from '~/lib/i18n/cusdisLang';
+// import type { ReactCusdis as ReactCusdisType } from 'react-cusdis';
+// import BLOG from '~/blog.config';
+// import { fetchCusdisLang } from '~/lib/i18n/cusdisLang';
 import { Post } from '~/types';
 
-// @ts-ignore
-const GitalkComponent = dynamic(
-  () => {
-    return import('~/components/Comment/CustomGitalk');
-  },
-  { ssr: false },
-);
+// const GitalkComponent = dynamic(
+//   () => {
+//     return import('~/components/Comment/CustomGitalk');
+//   },
+//   { ssr: false },
+// );
 
-// @ts-ignore
-const UtterancesComponent = dynamic(
-  () => {
-    return import('~/components/Comment/Utterances');
-  },
-  { ssr: false },
-);
+// const UtterancesComponent = dynamic(
+//   () => {
+//     return import('~/components/Comment/Utterances');
+//   },
+//   { ssr: false },
+// );
 
-// @ts-ignore
-const CusdisComponent = dynamic(
-  () => {
-    return import('react-cusdis').then((m) => m.ReactCusdis);
-  },
-  { ssr: false },
-) as typeof ReactCusdisType;
+// const CusdisComponent = dynamic(
+//   () => {
+//     return import('react-cusdis').then((m) => m.ReactCusdis);
+//   },
+//   { ssr: false },
+// ) as typeof ReactCusdisType;
 
 type Props = {
   post: Post;
@@ -38,7 +35,7 @@ export const Comments: React.VFC<Props> = ({ post }) => {
   const router = useRouter();
   return (
     <div>
-      {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
+      {/* {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
         <GitalkComponent
           options={{
             id: post.id,
@@ -65,7 +62,7 @@ export const Comments: React.VFC<Props> = ({ post }) => {
             theme: BLOG.appearance,
           }}
         />
-      )}
+      )} */}
     </div>
   );
 };
