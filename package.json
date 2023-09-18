@@ -81,5 +81,8 @@
   },
   "resolutions": {
     "axios": ">=0.21.1"
+  },
+  "volta": {
+    "node": "18.16.1"
   }
 }

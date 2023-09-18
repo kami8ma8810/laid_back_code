@@ -27,7 +27,23 @@ const BLOG = {
   // detail: https://github.com/yokinist/og-image/blob/main/api/_lib/types.ts#L2-L12
   socialLink: 'https://twitter.com/jookalubi24',
   seo: {
-    keywords: ['jookalubi'],
+    keywords: [
+      'jookalubi',
+      '上かるび',
+      'フロントエンドエンジニア',
+      'エンジニア',
+      'Web業界',
+      '転職',
+      'コーダー',
+      'Webデザイン',
+      'JavaScript',
+      'TypeScript',
+      'Vue',
+      'React',
+      'Astro',
+      'Nuxt.js',
+      'Next.js',
+    ],
     googleSiteVerification: '', // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
