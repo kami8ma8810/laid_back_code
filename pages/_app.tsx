@@ -1,25 +1,25 @@
-import { AnimatePresence } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
 import 'katex/dist/katex.min.css';
-import { ThemeProvider } from 'next-themes';
+// import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import 'prismjs/themes/prism.css';
 import 'react-notion-x/src/styles.css';
 import 'react-static-tweets/styles.css';
-import BLOG from '~/blog.config';
+// import BLOG from '~/blog.config';
 // import { Scripts } from '~/components';
-import { LocaleProvider } from '~/lib/i18n/locale';
+// import { LocaleProvider } from '~/lib/i18n/locale';
 import '~/styles/globals.css';
 import '~/styles/notion.css';
 
-const Ackee = dynamic(() => import('~/components/Stats/Ackee'), { ssr: false });
-const Gtag = dynamic(() => import('~/components/Stats/Gtag'), { ssr: false });
+// const Ackee = dynamic(() => import('~/components/Stats/Ackee'), { ssr: false });
+// const Gtag = dynamic(() => import('~/components/Stats/Gtag'), { ssr: false });
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
       {/* <Scripts /> */}
-      <LocaleProvider>
+      {/* <LocaleProvider>
         <>
           {BLOG.isProd && BLOG.analytics.provider === 'ackee' && (
             <Ackee
@@ -39,7 +39,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             </AnimatePresence>
           </ThemeProvider>
         </>
-      </LocaleProvider>
+      </LocaleProvider> */}
     </>
   );
 };
