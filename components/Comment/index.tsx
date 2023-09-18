@@ -6,6 +6,7 @@ import BLOG from '~/blog.config';
 import { fetchCusdisLang } from '~/lib/i18n/cusdisLang';
 import { Post } from '~/types';
 
+// @ts-ignore
 const GitalkComponent = dynamic(
   () => {
     return import('~/components/Comment/CustomGitalk');
@@ -13,6 +14,7 @@ const GitalkComponent = dynamic(
   { ssr: false },
 );
 
+// @ts-ignore
 const UtterancesComponent = dynamic(
   () => {
     return import('~/components/Comment/Utterances');
@@ -20,6 +22,7 @@ const UtterancesComponent = dynamic(
   { ssr: false },
 );
 
+// @ts-ignore
 const CusdisComponent = dynamic(
   () => {
     return import('react-cusdis').then((m) => m.ReactCusdis);
