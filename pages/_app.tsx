@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import 'prismjs/themes/prism.css';
 import 'react-notion-x/src/styles.css';
 import 'react-static-tweets/styles.css';
+import { MaintenancePage } from '~/components';
 // import BLOG from '~/blog.config';
 // import { Scripts } from '~/components';
 // import { LocaleProvider } from '~/lib/i18n/locale';
@@ -16,32 +17,15 @@ import '~/styles/notion.css';
 // const Gtag = dynamic(() => import('~/components/Stats/Gtag'), { ssr: false });
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
-  return (
-    <>
-      {/* <Scripts /> */}
-      {/* <LocaleProvider>
-        <>
-          {BLOG.isProd && BLOG.analytics.provider === 'ackee' && (
-            <Ackee
-              ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer}
-              ackeeDomainId={BLOG.analytics.ackeeConfig.domainId}
-            />
-          )}
-          {BLOG.isProd && BLOG.analytics.provider === 'ga' && <Gtag />}
-          <ThemeProvider
-            attribute="class"
-            defaultTheme={BLOG.appearance}
-            themes={['dark', 'light']}
-            enableSystem={false}
-          >
-            <AnimatePresence exitBeforeEnter>
-              <Component {...pageProps} />
-            </AnimatePresence>
-          </ThemeProvider>
-        </>
-      </LocaleProvider> */}
-    </>
-  );
+  // メンテナンスモードの確認
+  const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true';
+
+  // メンテナンスモード中はメンテナンスページを表示
+  if (isMaintenanceMode) {
+    return <MaintenancePage />;
+  }
+
+  return <Component {...pageProps} />;
 };
 
 export default MyApp;

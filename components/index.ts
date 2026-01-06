@@ -6,3 +6,4 @@ export * from './Twemoji';
 export * from './Vercel';
 export * from './Scripts';
 export * from './BlogPost';
+export * from './MaintenancePage';
